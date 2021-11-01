@@ -1,0 +1,71 @@
+@keyframes introArrow {
+  0% {
+    transform: translateX(0);
+  }
+  60% {
+    transform: translateX(-15px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes introBg {
+  0% {
+    background-position: 50% 50%;
+  }
+  25% {
+    background-position: 90% 35%;
+  }
+  40% {
+    background-position: 60% 25%;
+  }
+  60% {
+    background-position: 40% 25%;
+  }
+  75% {
+    background-position: 10% 35%;
+  }
+  100% {
+    background-position: 50% 50%;
+  }
+}
+
+@keyframes introScroll {
+  0% {
+    transform: translateX(-50%) rotate(20deg);
+  }
+  3% {
+    transform: translateX(-50%) rotate(-20deg);
+  }
+  6% {
+    transform: translateX(-50%) rotate(20deg);
+  }
+  9% {
+    transform: translateX(-50%) rotate(-20deg);
+  }
+  12% {
+    transform: translateX(-50%) rotate(0);
+  }
+  20% {
+    transform: translateX(-50%) translateY(50%) rotate(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(0) rotate(0);
+  }
+  100% {
+    transform: translateX(-50%) rotate(0);
+  }
+}
+
+@keyframes introScrollHover {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-15%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}

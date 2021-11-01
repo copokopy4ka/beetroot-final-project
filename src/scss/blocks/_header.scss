@@ -1,0 +1,247 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  width: 100%;
+  min-height: 80px;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &.active {
+    .header__nav {
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .header__burger {
+      transform: rotate(180deg);
+
+      & span {
+        display: none;
+      }
+  
+      &:before,
+      &:after {
+        top: 50%;
+      }
+
+      &:before {
+        transform: translateY(-50%) rotate(45deg);
+      }
+  
+      &:after {
+        transform: translateY(-50%) rotate(135deg);
+      }
+    }
+  }
+
+  @include breakpoint($laptop) {
+    min-height: 70px;
+  }
+
+  @include breakpoint($tablet) {
+    min-height: 50px;
+  }
+
+  @include breakpoint($mobile) {
+    min-height: 30px;
+  }
+  
+  &__logo {
+    width: 45px;
+
+    @include breakpoint($laptop) {
+      width: 40px;
+    }
+  
+    @include breakpoint($tablet) {
+      width: 35px;
+    }
+
+    @include breakpoint($mobile) {
+      width: 25px;
+    }
+  }
+
+  &__nav {
+    @include breakpoint($tablet) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $green;
+      visibility: hidden;
+      transform: translateY(-100%);
+      transition: all .2s linear;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0 30px 55px;
+
+    @include breakpoint($laptop) {
+      padding: 25px 0 25px 45px;
+    }
+  
+    @include breakpoint($tablet) {
+      padding: 20px 0 20px 40px;
+    }
+  
+    @include breakpoint($mobile) {
+      padding: 15px 0 15px 25px;
+    }
+  }
+
+  &__nav-item {
+    margin: 0 30px 0 0;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__nav-link {
+    text-transform: uppercase;
+    color: $white;
+    transition: color .1s linear;
+    font-size: 16px;
+
+    @include breakpoint($laptop) {
+      font-size: 15px;
+    }
+  
+    @include breakpoint($tablet) {
+      font-size: 14px;
+    }
+  
+    @include breakpoint($mobile) {
+      font-size: 12px;
+    }
+
+    &:hover {
+      color: $light-green;
+    }
+  }
+
+  &__actions {
+    display: flex;
+  }
+
+  &__btn {
+    background-color: transparent;
+    outline: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    margin: 0;
+    padding: 30px 35px;
+    color: $white;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color .1s linear;
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+
+    @include breakpoint($laptop) {
+      min-height: 70px;
+      padding: 25px 30px;
+      font-size: 15px;
+    }
+  
+    @include breakpoint($tablet) {
+      min-height: 50px;
+      padding: 20px 25px;
+      font-size: 13px;
+    }
+  
+    @include breakpoint($mobile) {
+      min-height: 30px;
+      padding: 10px 15px;
+      font-size: 10px;
+    }
+
+    &:hover {
+      background-color: $light-green;
+    }
+
+    &_search img {
+        margin: 0 10px 0 0;
+
+        @include breakpoint($tablet) {
+          width: 17px;
+          margin: 0 7px 0 0;
+        }
+      
+        @include breakpoint($mobile) {
+          width: 15px;
+          margin: 0 5px 0 0;
+        }
+    }
+  }
+
+  &__burger {
+    display: none;
+    width: 35px;
+    height: 25px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    position: relative;
+    left: 20px;
+    z-index: 3;
+    transition: transform .3s ease-in-out;
+
+    @include breakpoint($tablet) {
+      display: block;
+    }
+
+    @include breakpoint($mobile) {
+      width: 25px;
+      height: 18px;
+      left: 10px;
+    }
+
+    & span,
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: $white;
+      transition: transform .5s ease-in-out;
+
+      @include breakpoint($mobile) {
+        height: 2px;
+      }
+    }
+
+    & span {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:before {
+      top: 0;
+    }
+
+    &:after {
+      bottom: 0;
+    }
+  }
+}
