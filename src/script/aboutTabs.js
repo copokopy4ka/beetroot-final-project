@@ -14,8 +14,6 @@ tabsLinks.forEach(function(item) {
     })
 
     event.target.classList.add('active');
-    setTimeout(function() {
-      document.querySelector(`${contentsItemId}`).classList.add('active');
-    }, 100)
+    document.querySelector(`${contentsItemId}`).classList.add('active');
   })
 })
