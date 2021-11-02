@@ -46,3 +46,12 @@ setTimeout(addClass, 500, introTitle);
 setTimeout(addClass, 700, introSubTitle);
 setTimeout(addClass, 1100, introBtn);
 setTimeout(addClass, 1200, introLink);
+
+$(function(){
+  $('.products__slider').slick({
+    // autoplay: true,
+    // autoplaySpeed: 3000,
+    slidesToShow: 3,
+    adaptiveHeight: true,
+  });
+});

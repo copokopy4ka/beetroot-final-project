@@ -161,11 +161,7 @@
   }
 
   &__content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-between;
+    display: none;
     visibility: hidden;
     opacity: 0;
     transition: opacity .2s linear;
@@ -178,6 +174,8 @@
     &.active {
       visibility: visible;
       opacity: 1;
+      display: flex;
+      justify-content: space-between;
 
       .about__content-img {
         display: block;

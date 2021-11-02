@@ -20,6 +20,7 @@ html {
 html,
 body {
   margin: 0;
+  padding: 0;
 }
 
 /**
@@ -166,6 +167,7 @@ textarea {
   /* 1 */
   margin: 0;
   /* 2 */
+  cursor: pointer;
 }
 
 /**
@@ -723,6 +725,11 @@ body {
   animation: introBg 60s linear infinite;
   box-shadow: inset 0 140px 140px 0 rgba(1, 24, 63, 0.35);
 }
+@media screen and (min-width: 1900px) {
+  .intro {
+    background-size: cover;
+  }
+}
 @media screen and (max-width: 1024px) {
   .intro {
     box-shadow: inset 0 120px 120px 0 rgba(1, 24, 63, 0.35);
@@ -1199,11 +1206,7 @@ body {
   width: 100%;
 }
 .about__content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
+  display: none;
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.2s linear;
@@ -1217,6 +1220,8 @@ body {
 .about__content.active {
   visibility: visible;
   opacity: 1;
+  display: flex;
+  justify-content: space-between;
 }
 .about__content.active .about__content-img {
   display: block;
@@ -1349,4 +1354,71 @@ body {
 }
 .about__content-img:nth-child(1n+3) {
   display: none;
+}
+
+.products {
+  padding: 0 0 120px;
+}
+.products__title {
+  font-size: 30px;
+  letter-spacing: 6px;
+  color: #1c1c1b;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 0 80px;
+}
+.products__item {
+  height: 100%;
+}
+.products__item-holder {
+  height: 100%;
+}
+.products__item-description {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  border: 1px solid #ced6af;
+}
+.products__item-stars {
+  margin: 0 0 20px;
+  color: #6e774a;
+}
+.products__item-title {
+  font-size: 18px;
+  letter-spacing: 3px;
+  color: #1c1c1b;
+  text-transform: uppercase;
+  margin: 0 0 40px;
+}
+.products__item-footer {
+  display: flex;
+}
+.products__item-price {
+  font-size: 18px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #1c1c1b;
+  background-color: #f1f1f1;
+  border-left: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.products__item-btn {
+  max-width: 185px;
+  width: 100%;
+  background-color: #6e774a;
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 30px 40px;
+  transition: background-color 0.1s linear;
+}
+.products__item-btn:hover {
+  background-color: #565d34;
 }
