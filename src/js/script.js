@@ -52,6 +52,5 @@ $(function(){
     // autoplay: true,
     // autoplaySpeed: 3000,
     slidesToShow: 3,
-    adaptiveHeight: true,
   });
 });

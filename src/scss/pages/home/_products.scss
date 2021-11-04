@@ -10,12 +10,13 @@
     margin: 0 0 80px;
   }
 
-  &__item{
-    height: 100%;
+  &__slider {
+    margin-left: -40px;
+    position: relative;
   }
 
   &__item-holder {
-    height: 100%;
+    padding: 0 0 0 40px;
   }
 
   &__item-description {
@@ -23,17 +24,35 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 40px 0;
     border: 1px solid $light-green;
+    min-height: 430px;
   }
 
   &__item-stars {
     margin: 0 0 20px;
     color: $green;
+    display: flex;
+    justify-content: center;
+
+    & i {
+      margin: 0 4px 0 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &__item-img {
+    max-height: 245px;
+    object-fit: cover;
+
   }
 
   &__item-title {
+    text-align: center;
     font-size: 18px;
     letter-spacing: 3px;
     color: $secondary-color;
@@ -72,5 +91,11 @@
     &:hover {
       background-color: #565d34;
     }
+  }
+
+  & .slick-arrow {
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
   }
 }
