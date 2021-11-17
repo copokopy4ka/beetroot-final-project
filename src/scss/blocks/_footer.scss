@@ -1,0 +1,235 @@
+.footer {
+  padding: 120px 0 60px;
+
+  @include breakpoint($mobile) {
+    padding: 40px 0;
+  }
+
+  &__wraper {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -15px 60px;
+  
+    @include breakpoint($tablet) {
+      margin: 0 0 50px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    @include breakpoint($mobile) {
+      margin: 0 0 40px;
+    }
+  }
+
+  &__info,
+  &__contacts {
+    width: calc(100% / 3);
+    text-align: center;
+    padding: 0 15px;
+    color: $green;
+
+    @include breakpoint($tablet) {
+      width: 50%;
+    }
+  
+    @include breakpoint($mobile) {
+      width: 100%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid $green;
+    padding: 100px 0 0;
+
+    @include breakpoint($mobile) {
+      padding: 30px;
+    }
+  }
+
+  &__info-link {
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 4px;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 0 0 3px;
+    margin: 0 0 25px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+      bottom: 0;
+      transform: rotateY(90deg);
+      visibility: hidden;
+      transition: transform .4s ease;
+    }
+
+    &:hover::before {
+      transform: rotateX(0);
+      visibility: visible;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 85px 0 0;
+
+    @include breakpoint($tablet) {
+      order: 1;
+    }
+  }
+
+  &__logo {
+    font-size: 60px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include breakpoint($tablet) {
+      width: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  &__social-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    max-width: 200px;
+    width: 100%;
+    margin: 0 0 90px;
+  }
+
+  &__social-link {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 20px;
+    border-radius: 50%;
+    position: relative;
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: $light-green;
+      transform: rotateY(90deg);
+      transition: all .5s linear;
+    }
+
+    &:before {
+      top: 0;
+    }
+
+    &:after {
+      bottom: -5px;
+    }
+
+    &:hover:before,
+    &:hover:after {
+      transform: rotateY(0);
+    }
+
+    & i {
+      transition: transform .5s linear;
+    }
+
+    &:hover i {
+      transform: scale(1.4);
+    }
+  }
+
+  &__form {
+    padding: 30px 0 0;
+    position: relative;
+    width: 100%;
+
+    &::before {
+      content: '';
+      width: 2px;
+      height: 55px;
+      background-color: $green;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -100%);
+    }
+  }
+
+  &__form-title {
+    color: $secondary-color;
+    text-transform: uppercase;
+    margin: 0 0 30px;
+    font-size: 18px;
+    letter-spacing: 3px;
+  }
+
+  &__form-email {
+    border: 2px solid $light-green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 20px 30px;
+    font-size: 16px;
+    letter-spacing: 4px;
+    font-weight: 300;
+    width: 100%;
+    color: $green;
+    cursor: text;
+    line-height: 1.5;
+
+    &::placeholder {
+      font-size: 16px;
+      color: $green;
+    }
+  }
+
+  &__btn {
+    width: 90px;
+    height: 50px;
+    border-left: 2px solid $light-green;
+    color: $green;
+
+    & i {
+      display: block;
+    }
+
+    &:hover i {
+      animation: footerArrow 3s linear infinite;
+    }
+  }
+
+  &__copyright {
+    color: $green;
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 300;
+  }
+}

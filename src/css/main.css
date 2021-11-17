@@ -74,6 +74,7 @@ a {
   background-color: transparent;
   text-decoration: none;
   display: block;
+  color: inherit;
 }
 
 /**
@@ -183,6 +184,9 @@ select {
 
 button {
   border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 /**
@@ -351,8 +355,8 @@ ul, ol {
 
 @font-face {
   font-family: "icomoon";
-  src: url("../fonts/icons/icomoon.eot");
-  src: url("../fonts/icons/icomoon.eot?o5renq#iefix") format("embedded-opentype"), url("../fonts/icons/icomoon.ttf?o5renq") format("truetype"), url("../fonts/icons/icomoon.woff?o5renq") format("woff"), url("../fonts/icons/icomoon.svg?o5renq#icomoon") format("svg");
+  src: url("../fonts/icons/icomoon.eot?2f39zu");
+  src: url("../fonts/icons/icomoon.eot?2f39zu#iefix") format("embedded-opentype"), url("../fonts/icons/icomoon.ttf?2f39zu") format("truetype"), url("../fonts/icons/icomoon.woff?2f39zu") format("woff"), url("../fonts/icons/icomoon.svg?2f39zu#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -393,6 +397,10 @@ ul, ol {
 
 .icon-angle-down:before {
   content: "\f107";
+}
+
+.icon-youtube:before {
+  content: "\f16a";
 }
 
 body {
@@ -514,6 +522,59 @@ body {
     transform: scaleY(0);
     visibility: hidden;
     opacity: 0;
+  }
+}
+@keyframes footerArrow {
+  0% {
+    transform: translateX(0);
+  }
+  60% {
+    transform: translateX(-15%);
+  }
+  64% {
+    transform: translateX(-8%);
+  }
+  66% {
+    transform: translateX(-15%);
+  }
+  68% {
+    transform: translateX(-8%);
+  }
+  69% {
+    transform: translateX(-14%);
+  }
+  70% {
+    transform: translateX(-8%);
+  }
+  72% {
+    transform: translateX(-14%);
+  }
+  73% {
+    transform: translateX(-8%);
+  }
+  74% {
+    transform: translateX(-14%);
+  }
+  75% {
+    transform: translateX(-8%);
+  }
+  76% {
+    transform: translateX(-13%);
+  }
+  77% {
+    transform: translateX(-8%);
+  }
+  78% {
+    transform: translateX(-12%);
+  }
+  79% {
+    transform: translateX(-8%);
+  }
+  83% {
+    transform: translateX(170%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 .header {
@@ -1841,4 +1902,219 @@ body {
     height: 50px;
     font-size: 14px;
   }
+}
+
+.footer {
+  padding: 120px 0 60px;
+}
+@media screen and (max-width: 480px) {
+  .footer {
+    padding: 40px 0;
+  }
+}
+.footer__wraper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 -15px 60px;
+}
+@media screen and (max-width: 768px) {
+  .footer__wraper {
+    margin: 0 0 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .footer__wraper {
+    margin: 0 0 40px;
+  }
+}
+.footer__info, .footer__contacts {
+  width: 33.3333333333%;
+  text-align: center;
+  padding: 0 15px;
+  color: #6e774a;
+}
+@media screen and (max-width: 768px) {
+  .footer__info, .footer__contacts {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .footer__info, .footer__contacts {
+    width: 100%;
+  }
+}
+.footer__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid #6e774a;
+  padding: 100px 0 0;
+}
+@media screen and (max-width: 480px) {
+  .footer__info {
+    padding: 30px;
+  }
+}
+.footer__info-link {
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 4px;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding: 0 0 3px;
+  margin: 0 0 25px;
+  position: relative;
+}
+.footer__info-link::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  bottom: 0;
+  transform: rotateY(90deg);
+  visibility: hidden;
+  transition: transform 0.4s ease;
+}
+.footer__info-link:hover::before {
+  transform: rotateX(0);
+  visibility: visible;
+}
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 85px 0 0;
+}
+@media screen and (max-width: 768px) {
+  .footer__contacts {
+    order: 1;
+  }
+}
+.footer__logo {
+  font-size: 60px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 768px) {
+  .footer__logo {
+    width: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+.footer__social-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 200px;
+  width: 100%;
+  margin: 0 0 90px;
+}
+.footer__social-link {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 20px;
+  border-radius: 50%;
+  position: relative;
+}
+.footer__social-link:before, .footer__social-link:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #ced6af;
+  transform: rotateY(90deg);
+  transition: all 0.5s linear;
+}
+.footer__social-link:before {
+  top: 0;
+}
+.footer__social-link:after {
+  bottom: -5px;
+}
+.footer__social-link:hover:before, .footer__social-link:hover:after {
+  transform: rotateY(0);
+}
+.footer__social-link i {
+  transition: transform 0.5s linear;
+}
+.footer__social-link:hover i {
+  transform: scale(1.4);
+}
+.footer__form {
+  padding: 30px 0 0;
+  position: relative;
+  width: 100%;
+}
+.footer__form::before {
+  content: "";
+  width: 2px;
+  height: 55px;
+  background-color: #6e774a;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
+.footer__form-title {
+  color: #1c1c1b;
+  text-transform: uppercase;
+  margin: 0 0 30px;
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+.footer__form-email {
+  border: 2px solid #ced6af;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 20px 30px;
+  font-size: 16px;
+  letter-spacing: 4px;
+  font-weight: 300;
+  width: 100%;
+  color: #6e774a;
+  cursor: text;
+  line-height: 1.5;
+}
+.footer__input::placeholder {
+  font-size: 16px;
+  color: #6e774a;
+}
+.footer__btn {
+  width: 90px;
+  height: 50px;
+  border-left: 2px solid #ced6af;
+  color: #6e774a;
+}
+.footer__btn i {
+  display: block;
+}
+.footer__btn:hover i {
+  animation: footerArrow 3s linear infinite;
+}
+.footer__copyright {
+  color: #6e774a;
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 300;
 }

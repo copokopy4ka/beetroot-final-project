@@ -116,3 +116,73 @@
     opacity: 0;
   }
 }
+
+@keyframes footerArrow {
+  0% {
+    transform: translateX(0);
+  }
+
+  60% {
+    transform: translateX(-15%);
+  }
+
+  64% {
+    transform: translateX(-8%);
+  }
+
+  66% {
+    transform: translateX(-15%);
+  }
+
+  68% {
+    transform: translateX(-8%);
+  }
+
+  69% {
+    transform: translateX(-14%);
+  }
+
+  70% {
+    transform: translateX(-8%);
+  }
+
+  72% {
+    transform: translateX(-14%);
+  }
+
+  73% {
+    transform: translateX(-8%);
+  }
+
+  74% {
+    transform: translateX(-14%);
+  }
+
+  75% {
+    transform: translateX(-8%);
+  }
+
+  76% {
+    transform: translateX(-13%);
+  }
+
+  77% {
+    transform: translateX(-8%);
+  }
+
+  78% {
+    transform: translateX(-12%);
+  }
+
+  79% {
+    transform: translateX(-8%);
+  }
+
+  83% {
+    transform: translateX(170%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

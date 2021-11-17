@@ -79,6 +79,7 @@ a {
   background-color: transparent;
   text-decoration: none;
   display: block;
+  color: inherit;
 }
 
 /**
@@ -189,6 +190,9 @@ select {
 
 button {
   border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 /**

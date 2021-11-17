@@ -1,11 +1,11 @@
 //icons 
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icons/icomoon.eot');
-  src:  url('../fonts/icons/icomoon.eot?o5renq#iefix') format('embedded-opentype'),
-    url('../fonts/icons/icomoon.ttf?o5renq') format('truetype'),
-    url('../fonts/icons/icomoon.woff?o5renq') format('woff'),
-    url('../fonts/icons/icomoon.svg?o5renq#icomoon') format('svg');
+  src:  url('../fonts/icons/icomoon.eot?2f39zu');
+  src:  url('../fonts/icons/icomoon.eot?2f39zu#iefix') format('embedded-opentype'),
+    url('../fonts/icons/icomoon.ttf?2f39zu') format('truetype'),
+    url('../fonts/icons/icomoon.woff?2f39zu') format('woff'),
+    url('../fonts/icons/icomoon.svg?2f39zu#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -43,4 +43,7 @@
 }
 .icon-angle-down:before {
   content: "\f107";
+}
+.icon-youtube:before {
+  content: "\f16a";
 }
