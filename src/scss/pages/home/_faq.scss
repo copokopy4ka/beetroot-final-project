@@ -1,0 +1,86 @@
+.faq {
+  padding: 100px 0;
+
+  @include breakpoint($tablet) {
+    padding: 80px 0;
+  }
+
+  @include breakpoint($mobile) {
+    padding: 60px 0;
+  }
+
+  &__title {
+    font-size: 30px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: $secondary-color;
+    text-align: center;
+    margin: 0 0 45px;
+
+    @include breakpoint($tablet) {
+      font-size: 24px;
+      margin: 0 0 40px;
+    }
+  
+    @include breakpoint($mobile) {
+      font-size: 22px;
+      margin: 0 0 35px;
+    }
+  }
+
+  &__tabs {
+    max-width: 570px;
+    margin: 0 auto;
+  }
+
+  &__tabs-item {
+    border-top: 2px solid #eaedde;
+    position: relative;
+    background-color: #f7f8f3;
+
+    &:last-child {
+      border-bottom: 2px solid #eaedde;
+    }
+  }
+
+  &__tabs-title-holder {
+    cursor: pointer;
+    padding: 30px 0 30px 45px;
+  }
+
+  &__tabs-item-plus {
+    position: absolute;
+    left: 0;
+    top: 30px;
+  }
+
+  &__tabs-item-title {
+    font-size: 18px;
+    letter-spacing: 5px;
+    color: $green;
+    font-weight: 300;
+    position: relative;
+    z-index: 2;
+
+    @include breakpoint($mobile) {
+      font-size: 16px;
+      letter-spacing: 4px;
+    }
+  }
+
+  &__tabs-item-text {
+    font-size: 0;
+    line-height: 0;
+    letter-spacing: 1px;
+    color: #000;
+    transform: scaleY(0);
+    visibility: hidden;
+    opacity: 0;
+    transform-origin: top;
+    animation: hideFaqText .1s ease-in-out forwards;
+  }
+
+  &__tabs-title-holder.active ~ .faq__tabs-item-text{
+    animation: showFaqText .3s ease-in-out forwards;
+  }
+}

@@ -1,11 +1,11 @@
 .intro {
   background: url('../../../img/intro/intro-bg.png'), #abcbe1;
-  background-size: auto, auto;
+  background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   overflow: hidden;
   position: relative;
-  animation: introBg 60s linear infinite;
+  // animation: introBg 60s linear infinite;
   box-shadow: inset 0 140px 140px 0 rgba(1, 24, 63, 0.35);
 
   @media screen and (min-width: 1900px){

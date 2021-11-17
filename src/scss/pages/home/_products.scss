@@ -8,15 +8,29 @@
     text-align: center;
     text-transform: uppercase;
     margin: 0 0 80px;
+
+    @include breakpoint($mobile) {
+      font-size: 26px;
+      letter-spacing: 4px;
+      margin: 0 0 50px;
+    }
   }
 
   &__slider {
     margin-left: -40px;
     position: relative;
+
+    @include breakpoint($mobile) {
+      margin: 0;
+    }
   }
 
   &__item-holder {
     padding: 0 0 0 40px;
+
+    @include breakpoint($mobile) {
+      padding: 0 20px;
+    }
   }
 
   &__item-description {
@@ -25,7 +39,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 40px 0;
+    padding: 40px 20px;
     border: 1px solid $light-green;
     min-height: 430px;
   }
@@ -36,8 +50,16 @@
     display: flex;
     justify-content: center;
 
+    @include breakpoint($mobile) {
+      margin: 0 0 15px;
+    }
+
     & i {
       margin: 0 4px 0 0;
+
+      @include breakpoint($mobile) {
+        margin: 0 3px 0 0;
+      }
 
       &:last-child {
         margin: 0;
@@ -47,8 +69,8 @@
 
   &__item-img {
     max-height: 245px;
+    height: 100%;
     object-fit: cover;
-
   }
 
   &__item-title {
@@ -57,7 +79,10 @@
     letter-spacing: 3px;
     color: $secondary-color;
     text-transform: uppercase;
-    margin: 0 0 40px;
+
+    @include breakpoint($mobile) {
+      font-size: 15px;
+    }
   }
 
   &__item-footer {
@@ -75,27 +100,71 @@
     padding: 30px;
     display: flex;
     align-items: center;
-    width: 100%;
+    width: calc((100% / 3) * 2);
+
+    @include breakpoint($mobile) {
+      font-size: 15px;
+    }
   }
 
   &__item-btn {
-    max-width: 185px;
-    width: 100%;
+    width: calc(100% / 3);
     background-color: $green;
     font-size: 20px;
     color: #fff;
     text-transform: uppercase;
-    padding: 30px 40px;
+    padding: 15px;
     transition: background-color .1s linear;
+
+    @include breakpoint($mobile) {
+      font-size: 16px;
+    }
 
     &:hover {
       background-color: #565d34;
     }
   }
 
-  & .slick-arrow {
+  & .products__arrow {
     position: absolute;
-    bottom: -100px;
+    bottom: -80px;
     left: 50%;
+    font-size: 20px;
+    color: $green;
+    cursor: pointer;
+    width: 60px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .2s ease-in-out;
+
+    &:hover {
+      background-color: #eaeed8;
+    }
+
+    @include breakpoint($mobile) {
+      font-size: 18px;
+      bottom: -60px;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 40px;
+    }
+
+    &.arrow-left {
+      left: 45%;
+
+      @include breakpoint($mobile) {
+        left: 40%;
+      }
+    }
+
+    &.arrow-right {
+      left: 55%;
+
+      @include breakpoint($mobile) {
+        left: 60%;
+      }
+    }
   }
 }

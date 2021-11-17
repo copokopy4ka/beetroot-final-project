@@ -69,3 +69,50 @@
     transform: translateX(-50%) translateY(0);
   }
 }
+
+@keyframes showFaqText {
+  0% {
+    font-size: 0;
+    line-height: 0;
+    transform: scaleY(0);
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  10% {
+    font-size: 18px;
+    line-height: 40px;
+  }
+
+  100% {
+    font-size: 18px;
+    line-height: 40px;
+    transform: scaleY(1);
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes hideFaqText {
+  0% {
+    font-size: 18px;
+    line-height: 40px;
+    transform: scaleY(1);
+    visibility: visible;
+    opacity: 1;
+  }
+
+  10% {
+    transform: scaleY(0);
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  100% {
+    font-size: 0;
+    line-height: 0;
+    transform: scaleY(0);
+    visibility: hidden;
+    opacity: 0;
+  }
+}

@@ -6,15 +6,15 @@
   }
 
   @include breakpoint($laptop) {
-    padding: 80px 40px 100px;
+    padding: 80px 40px 120px;
   }
 
   @include breakpoint($tablet) {
-    padding: 60px 30px 80px;
+    padding: 60px 30px 100px;
   }
 
   @include breakpoint($mobile) {
-    padding: 40px 15px 50px;
+    padding: 40px 15px 100px;
   }
   
   & .container {
