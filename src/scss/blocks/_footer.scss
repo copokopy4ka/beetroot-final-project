@@ -1,5 +1,5 @@
 .footer {
-  padding: 120px 0 60px;
+  padding: 170px 0 100px;
 
   @include breakpoint($mobile) {
     padding: 40px 0;
@@ -219,7 +219,7 @@
     }
 
     &:hover i {
-      animation: footerArrow 3s linear infinite;
+      animation: hoverArrowRight 3s linear infinite;
     }
   }
 

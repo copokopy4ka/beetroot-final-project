@@ -10,11 +10,42 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: background-color .2s linear;
+
+  &.fixed {
+    min-height: 40px;
+    background-color: #fff;
+    position: fixed;
+    right: 0;
+    z-index: 3;
+    animation: headerFixedShow .2s linear forwards;
+
+    .header__nav-link,
+    .header__btn {
+      color: $green;
+    }
+
+    .header__logo{
+      background-color: $green;
+      padding: 5px;
+      border-radius: 15px;
+    }
+
+    .header__burger:before,
+    .header__burger:after,
+    .header__burger span {
+      background-color: $green;
+    }
+  }
 
   &.active {
     .header__nav {
       visibility: visible;
       transform: translateY(0);
+    }
+
+    .header__nav-link {
+      color: $white;
     }
 
     .header__burger {
@@ -27,6 +58,7 @@
       &:before,
       &:after {
         top: 50%;
+        background-color: #fff;
       }
 
       &:before {
@@ -117,6 +149,23 @@
     color: $white;
     transition: color .1s linear;
     font-size: 16px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -10px;
+      right: -10px;
+      height: 2px;
+      background-color: #9db892;
+      transform: rotateY(90deg);
+      transition: transform .3s linear;
+    }
+
+    &.current::before {
+      transform: rotateY(0);
+    }
 
     @include breakpoint($laptop) {
       font-size: 15px;

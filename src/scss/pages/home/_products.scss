@@ -140,7 +140,14 @@
     transition: background-color .2s ease-in-out;
 
     &:hover {
-      background-color: #eaeed8;
+
+      &.arrow-left i {
+        animation: hoverArrowLeft 3s linear infinite;
+      }
+
+      &.arrow-right i {
+        animation: hoverArrowRight 3s linear infinite;
+      }
     }
 
     @include breakpoint($mobile) {

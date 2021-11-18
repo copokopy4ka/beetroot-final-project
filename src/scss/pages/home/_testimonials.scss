@@ -1,5 +1,5 @@
 .testimonials {
-  padding: 50px 0;
+  padding: 50px 0 0;
   position: relative;
 
   &__item-wraper {
@@ -176,6 +176,18 @@
     justify-content: center;
     cursor: pointer;
     transition: background-color .2s linear;
+
+    &:hover {
+      background-color: rgba(206, 214, 175, 0.4);
+
+      &.testimonials__btn-prev i {
+        animation: hoverArrowLeft 3s linear infinite;
+      }
+
+      &.testimonials__btn-next i {
+        animation: hoverArrowRight 3s linear infinite;
+      }
+    }
 
     @include breakpoint($tablet) {
       width: 90px;

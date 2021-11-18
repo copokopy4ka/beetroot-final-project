@@ -21,6 +21,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 /**
@@ -524,7 +525,7 @@ body {
     opacity: 0;
   }
 }
-@keyframes footerArrow {
+@keyframes hoverArrowRight {
   0% {
     transform: translateX(0);
   }
@@ -577,6 +578,67 @@ body {
     transform: translateX(0);
   }
 }
+@keyframes hoverArrowLeft {
+  0% {
+    transform: translateX(0);
+  }
+  60% {
+    transform: translateX(15%);
+  }
+  64% {
+    transform: translateX(8%);
+  }
+  66% {
+    transform: translateX(15%);
+  }
+  68% {
+    transform: translateX(8%);
+  }
+  69% {
+    transform: translateX(14%);
+  }
+  70% {
+    transform: translateX(8%);
+  }
+  72% {
+    transform: translateX(14%);
+  }
+  73% {
+    transform: translateX(8%);
+  }
+  74% {
+    transform: translateX(14%);
+  }
+  75% {
+    transform: translateX(8%);
+  }
+  76% {
+    transform: translateX(13%);
+  }
+  77% {
+    transform: translateX(8%);
+  }
+  78% {
+    transform: translateX(12%);
+  }
+  79% {
+    transform: translateX(8%);
+  }
+  83% {
+    transform: translateX(-170%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes headerFixedShow {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 .header {
   position: absolute;
   top: 0;
@@ -589,10 +651,36 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: background-color 0.2s linear;
+}
+.header.fixed {
+  min-height: 40px;
+  background-color: #fff;
+  position: fixed;
+  right: 0;
+  z-index: 3;
+  animation: headerFixedShow 0.2s linear forwards;
+}
+.header.fixed .header__nav-link,
+.header.fixed .header__btn {
+  color: #6e774a;
+}
+.header.fixed .header__logo {
+  background-color: #6e774a;
+  padding: 5px;
+  border-radius: 15px;
+}
+.header.fixed .header__burger:before,
+.header.fixed .header__burger:after,
+.header.fixed .header__burger span {
+  background-color: #6e774a;
 }
 .header.active .header__nav {
   visibility: visible;
   transform: translateY(0);
+}
+.header.active .header__nav-link {
+  color: #fff;
 }
 .header.active .header__burger {
   transform: rotate(180deg);
@@ -602,6 +690,7 @@ body {
 }
 .header.active .header__burger:before, .header.active .header__burger:after {
   top: 50%;
+  background-color: #fff;
 }
 .header.active .header__burger:before {
   transform: translateY(-50%) rotate(45deg);
@@ -691,6 +780,21 @@ body {
   color: #fff;
   transition: color 0.1s linear;
   font-size: 16px;
+  position: relative;
+}
+.header__nav-link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  right: -10px;
+  height: 2px;
+  background-color: #9db892;
+  transform: rotateY(90deg);
+  transition: transform 0.3s linear;
+}
+.header__nav-link.current::before {
+  transform: rotateY(0);
 }
 @media screen and (max-width: 1024px) {
   .header__nav-link {
@@ -1595,8 +1699,11 @@ body {
   justify-content: center;
   transition: background-color 0.2s ease-in-out;
 }
-.products .products__arrow:hover {
-  background-color: #eaeed8;
+.products .products__arrow:hover.arrow-left i {
+  animation: hoverArrowLeft 3s linear infinite;
+}
+.products .products__arrow:hover.arrow-right i {
+  animation: hoverArrowRight 3s linear infinite;
 }
 @media screen and (max-width: 480px) {
   .products .products__arrow {
@@ -1708,7 +1815,7 @@ body {
 }
 
 .testimonials {
-  padding: 50px 0;
+  padding: 50px 0 0;
   position: relative;
 }
 .testimonials__item-wraper {
@@ -1889,6 +1996,15 @@ body {
   cursor: pointer;
   transition: background-color 0.2s linear;
 }
+.testimonials__btn:hover {
+  background-color: rgba(206, 214, 175, 0.4);
+}
+.testimonials__btn:hover.testimonials__btn-prev i {
+  animation: hoverArrowLeft 3s linear infinite;
+}
+.testimonials__btn:hover.testimonials__btn-next i {
+  animation: hoverArrowRight 3s linear infinite;
+}
 @media screen and (max-width: 768px) {
   .testimonials__btn {
     width: 90px;
@@ -1905,7 +2021,7 @@ body {
 }
 
 .footer {
-  padding: 120px 0 60px;
+  padding: 170px 0 100px;
 }
 @media screen and (max-width: 480px) {
   .footer {
@@ -2107,7 +2223,7 @@ body {
   display: block;
 }
 .footer__btn:hover i {
-  animation: footerArrow 3s linear infinite;
+  animation: hoverArrowRight 3s linear infinite;
 }
 .footer__copyright {
   color: #6e774a;
