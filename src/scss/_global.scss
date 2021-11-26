@@ -1,6 +1,35 @@
 body {
   font-family: 'Oswald', sans-serif;
   background-color: $primary-color;
+  overflow: auto;
+  scrollbar-width: none; 
+
+  &::before {
+    content: '';
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    
+  }
+
+  &.no-scroll {
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      z-index: 6;
+      display: block;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+body::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
 
 .container {
@@ -8,4 +37,8 @@ body {
   padding: 0 15px;
   margin: 0 auto;
   width: 100%;
+}
+
+.main {
+  position: relative;
 }

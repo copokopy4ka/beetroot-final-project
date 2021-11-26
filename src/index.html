@@ -43,6 +43,29 @@
     </div>
   </header>
   <main class="main">
+    <div class="login-modal">
+      <form action="post" class="login-modal__form">
+        <h3 class="login-modal__title">Log in</h3>
+        <div class="login-modal__input-wraper">
+          <div class="login-modal__label">
+            <label class="login-modal__email-label" for="login-email">Email</label>
+            <div class="login-modal__change">
+              <span class="login-modal__text">Need an account?</span>
+              <span class="change-modal">Sing up</span>
+            </div>
+          </div>
+          <input type="email" name="mail" id="login-email" class="login-modal__input" required>
+        </div>
+        <div class="login-modal__input-wraper">
+          <div class="login-modal__label">
+            <label class="login-modal__password-label" for="login-password">Password</label>
+          </div>
+          <input type="password" name="password" id="login-password" class="login-modal__input" required>
+        </div>
+        <button type="submit" class="login-modal__btn">Log in</button>
+        <button type="button" class="login-modal__close"></button>
+      </form>
+    </div>
     <section class="intro" id="intro">
       <span class="intro__text-vertical">CBD Potion health</span>
       <div class="container">

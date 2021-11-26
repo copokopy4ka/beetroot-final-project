@@ -266,3 +266,30 @@
     transform: translateY(0);
   }
 }
+
+@keyframes changeSinginModal {
+  0% {
+    right: 100%;
+    left: 0;
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  50% {
+    right: 0;
+    left: 0;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    right: 0;
+    left: 100%;
+  }
+}
