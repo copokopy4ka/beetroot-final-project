@@ -10,27 +10,6 @@
   }
 }
 
-@keyframes introBg {
-  0% {
-    background-position: 50% 50%;
-  }
-  25% {
-    background-position: 90% 35%;
-  }
-  40% {
-    background-position: 60% 25%;
-  }
-  60% {
-    background-position: 40% 25%;
-  }
-  75% {
-    background-position: 10% 35%;
-  }
-  100% {
-    background-position: 50% 50%;
-  }
-}
-
 @keyframes introScroll {
   0% {
     transform: translateX(-50%) rotate(20deg);
